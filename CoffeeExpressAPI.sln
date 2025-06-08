@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeExpressAPI.Domain", "CoffeeExpressAPI.Domain\CoffeeExpressAPI.Domain.csproj", "{E32C5674-2B2F-467A-A855-5FCBCE897B57}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeExpressAPI.Application", "CoffeeExpressAPI.Application\CoffeeExpressAPI.Application.csproj", "{5442485D-DFA1-4811-AB44-ED7C13D1C182}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeExpressAPI.Infrastructure", "CoffeeExpressAPI.Infrastructure\CoffeeExpressAPI.Infrastructure.csproj", "{21A93A29-E406-4A9C-99C8-41D162D6AF96}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeExpressAPI.Api", "CoffeeExpressAPI.Api\CoffeeExpressAPI.Api.csproj", "{54B34EF6-A368-4196-9516-C23CB55EF726}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E32C5674-2B2F-467A-A855-5FCBCE897B57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E32C5674-2B2F-467A-A855-5FCBCE897B57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E32C5674-2B2F-467A-A855-5FCBCE897B57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E32C5674-2B2F-467A-A855-5FCBCE897B57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5442485D-DFA1-4811-AB44-ED7C13D1C182}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5442485D-DFA1-4811-AB44-ED7C13D1C182}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5442485D-DFA1-4811-AB44-ED7C13D1C182}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5442485D-DFA1-4811-AB44-ED7C13D1C182}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21A93A29-E406-4A9C-99C8-41D162D6AF96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21A93A29-E406-4A9C-99C8-41D162D6AF96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21A93A29-E406-4A9C-99C8-41D162D6AF96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21A93A29-E406-4A9C-99C8-41D162D6AF96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54B34EF6-A368-4196-9516-C23CB55EF726}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54B34EF6-A368-4196-9516-C23CB55EF726}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54B34EF6-A368-4196-9516-C23CB55EF726}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54B34EF6-A368-4196-9516-C23CB55EF726}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
