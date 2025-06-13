@@ -1,6 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using CoffeeExpressAPI.Infrastructure.Data.Contexts;
 using CoffeeExpressAPI.Application;
+using CoffeeExpressAPI.Application.Mappings;
+using CoffeeExpressAPI.Application.Validators;
 using Serilog;
 
 //Cofiguracion de Serilog
@@ -27,6 +29,14 @@ try
     // Configurar Entity Framework
     builder.Services.AddDbContext<CoffeeExpressDbContext>(options =>
         options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+    // Configurar AutoMapper
+    builder.Services.AddAutoMapperConfiguration();
+    Log.Information("🗺️ AutoMapper configurado correctamente");
+
+    // Configurar FluentValidation
+    builder.Services.AddFluentValidationConfiguration();
+    Log.Information("✅ FluentValidation configurado correctamente");
 
     // Configurar MediatR
     builder.Services.AddMediatR(cfg =>
