@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeExpressAPI.Infrastruc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeExpressAPI.Api", "CoffeeExpressAPI.Api\CoffeeExpressAPI.Api.csproj", "{54B34EF6-A368-4196-9516-C23CB55EF726}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeExpressAPI.Tests.Unit", "CoffeeExpressAPI.Tests.Unit\CoffeeExpressAPI.Tests.Unit.csproj", "{39A8E9C4-1FB2-4F64-BC11-27954EE1D8E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeExpressAPI.Tests.Integration", "CoffeeExpressAPI.Tests.Integration\CoffeeExpressAPI.Tests.Integration.csproj", "{C6348D31-BBD0-4CB8-8483-BA91229CC7DE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +40,13 @@ Global
 		{54B34EF6-A368-4196-9516-C23CB55EF726}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54B34EF6-A368-4196-9516-C23CB55EF726}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54B34EF6-A368-4196-9516-C23CB55EF726}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39A8E9C4-1FB2-4F64-BC11-27954EE1D8E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39A8E9C4-1FB2-4F64-BC11-27954EE1D8E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39A8E9C4-1FB2-4F64-BC11-27954EE1D8E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39A8E9C4-1FB2-4F64-BC11-27954EE1D8E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6348D31-BBD0-4CB8-8483-BA91229CC7DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6348D31-BBD0-4CB8-8483-BA91229CC7DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6348D31-BBD0-4CB8-8483-BA91229CC7DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6348D31-BBD0-4CB8-8483-BA91229CC7DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

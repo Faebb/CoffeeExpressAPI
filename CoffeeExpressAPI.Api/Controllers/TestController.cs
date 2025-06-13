@@ -40,16 +40,17 @@ namespace CoffeeExpressAPI.Api.Controllers
                 // Intentar conectar a la base de datos
                 var canConnect = await _context.Database.CanConnectAsync();
 
-                if (canConnect) 
+                if (canConnect)
                 {
                     var databaseCreated = await _context.Database.EnsureCreatedAsync();
-                    _logger.LogInformation("✅ Conexión a base de datos exitosa. Base de datos creada: {DatabaseCreated}\", databaseCreated");
-                    
+                    _logger.LogInformation("✅ Conexión a base de datos exitosa. Base de datos creada: {DatabaseCreated}", databaseCreated);
+
                     return Ok(new
                     {
                         Message = "✅ Conexión a base de datos exitosa",
-                        DatabaseExists = !databaseCreated, // Si EnsureCreated retorna false, ya existía
+                        DatabaseExists = !databaseCreated,
                         DatabaseCreated = databaseCreated,
+                        DatabaseProvider = _context.Database.ProviderName,
                         Timestamp = DateTime.UtcNow
                     });
                 }
@@ -58,7 +59,6 @@ namespace CoffeeExpressAPI.Api.Controllers
                     _logger.LogError("❌ No se pudo conectar a la base de datos");
                     return BadRequest("❌ No se pudo conectar a la base de datos");
                 }
-
             }
             catch (Exception ex)
             {
