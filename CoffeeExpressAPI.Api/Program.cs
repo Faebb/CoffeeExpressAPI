@@ -26,9 +26,21 @@ try
         .ReadFrom.Services(services)
         .Enrich.FromLogContext());
 
-    // Configurar Entity Framework
-    builder.Services.AddDbContext<CoffeeExpressDbContext>(options =>
-        options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    // ✅ Configurar Entity Framework según el entorno
+    if (builder.Environment.IsEnvironment("Testing"))
+    {
+        // Para tests: usar InMemory database
+        builder.Services.AddDbContext<CoffeeExpressDbContext>(options =>
+            options.UseInMemoryDatabase("TestDatabase"));
+        Log.Information("🧪 Usando InMemory database para testing");
+    }
+    else
+    {
+        // Para desarrollo/producción: usar SQL Server
+        builder.Services.AddDbContext<CoffeeExpressDbContext>(options =>
+            options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+        Log.Information("🗃️ Usando SQL Server para {Environment}", builder.Environment.EnvironmentName);
+    }
 
     // Configurar AutoMapper
     builder.Services.AddAutoMapperConfiguration();
@@ -64,6 +76,23 @@ try
             diagnosticContext.Set("RequestScheme", HttpContent.Request.Scheme);
         };
     });
+
+    // Agregar middleware de Serilog para request logging (solo si no es testing)
+    if (!app.Environment.IsEnvironment("Testing"))
+    {
+        app.UseSerilogRequestLogging(options =>
+        {
+            options.MessageTemplate = "🌐 HTTP {RequestMethod} {RequestPath} responded {StatusCode} in {Elapsed:0.0000} ms";
+            options.GetLevel = (httpContext, elapsed, ex) => ex != null
+                ? Serilog.Events.LogEventLevel.Error
+                : Serilog.Events.LogEventLevel.Information;
+            options.EnrichDiagnosticContext = (diagnosticContext, httpContext) =>
+            {
+                diagnosticContext.Set("RequestHost", httpContext.Request.Host.Value);
+                diagnosticContext.Set("RequestScheme", httpContext.Request.Scheme);
+            };
+        });
+    }
 
     // Configure the HTTP request pipeline.
     if (app.Environment.IsDevelopment())
