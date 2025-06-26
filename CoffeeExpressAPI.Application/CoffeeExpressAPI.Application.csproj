@@ -22,8 +22,6 @@
 		<Folder Include="Commands\Orders\" />
 		<Folder Include="Common\Coffee\" />
 		<Folder Include="Common\Orders\" />
-		<Folder Include="Dtos\" />
-		<Folder Include="Interfaces\" />
 		<Folder Include="Queries\" />
 		<Folder Include="Validators\Coffee\" />
 		<Folder Include="Validators\Orders\" />

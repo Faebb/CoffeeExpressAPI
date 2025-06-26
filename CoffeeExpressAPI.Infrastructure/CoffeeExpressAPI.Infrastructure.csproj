@@ -24,8 +24,6 @@
 		<Folder Include="Data\Configurations\" />
 		<Folder Include="Migrations\" />
 		<Folder Include="DependencyInjection\" />
-		<Folder Include="Services\" />
-		<Folder Include="Repositories\" />
 	</ItemGroup>
 
 </Project>
